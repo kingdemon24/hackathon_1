@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:hackathon_1/screens/homepage.dart';
 import 'package:hackathon_1/screens/authpage/register.dart';
+import 'package:hackathon_1/screens/homescreen/homepage.dart';
 
 
 void main() {
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const  MaterialApp(
-      home: RegisterScreen()
+      debugShowCheckedModeBanner: false,
+      home: MyHomePage()
     );
   }
 }
