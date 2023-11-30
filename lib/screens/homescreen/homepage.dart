@@ -5,6 +5,7 @@ import 'package:hackathon_1/core/constants/string_constants.dart';
 import 'package:hackathon_1/core/utils/asset_provider.dart';
 import 'package:hackathon_1/core/utils/util.dart';
 import 'package:hackathon_1/features/widgets/responsive_text.dart';
+import 'package:hackathon_1/screens/authpage/register.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -111,6 +112,7 @@ class MyHomePage extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
+                          
                           children: [
                             Image.asset(
                               Assets.images.mylessonplan,
@@ -120,10 +122,16 @@ class MyHomePage extends StatelessWidget {
                               kMyLessonPlan,
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
+                              
                             ),
                           ],
                         ),
                       ),
+    //                   onPressed: (){
+    //                       Navigator.push(
+    // context,
+    // MaterialPageRoute(builder: (context) =>  RegisterScreen()),
+    //                     );},
                     ),
                     
                   ],
@@ -161,31 +169,65 @@ class MyHomePage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(width: kHorizontalMargin),
-                    Container(
-                      // color: Colors.amber,
-                      height: height*0.17,
-                      width: height*0.2,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        color: Color(kAppBar)
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            Image.asset(
-                              Assets.images.myqas,
-                            ),
-                            SizedBox(height: kVerticalMargin,),
-                            ResponsiveText(
-                              kQA,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                    // Container(
+                    //   // color: Colors.amber,
+                    //   height: height*0.17,
+                    //   width: height*0.2,
+                    //   decoration: BoxDecoration(
+                    //     borderRadius: BorderRadius.circular(8),
+                    //     color: Color(kAppBar)
+                    //   ),
+                    //   child: Padding(
+                    //     padding: const EdgeInsets.all(8.0),
+                    //     child: Column(
+                    //       children: [
+                    //         Image.asset(
+                    //           Assets.images.myqas,
+                    //         ),
+                    //         SizedBox(height: kVerticalMargin,),
+                    //         ResponsiveText(
+                    //           kQA,
+                    //           fontSize: 16,
+                    //           fontWeight: FontWeight.w600,
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ),
+                    GestureDetector(
+  onTap: () {
+    // Navigate to another screen when the container is pressed
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => RegisterScreen()),
+    );
+  },
+  child: Container(
+    height: height * 0.17,
+    width: height * 0.2,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(8),
+      color: Color(kAppBar),
+    ),
+    child: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: [
+          Image.asset(
+            Assets.images.myqas,
+          ),
+          SizedBox(height: kVerticalMargin),
+          ResponsiveText(
+            kQA,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+          ),
+        ],
+      ),
+    ),
+  ),
+),
+
                     
                   ],
                 ),
